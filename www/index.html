@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>wanderdrone</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no" />
+
+		<script src="modestmaps.min.js" type="text/javascript"></script>
+		<script src="wanderdrone.js" type='text/javascript'></script>
+
+		<link rel="stylesheet" type="text/css" href="wanderdrone.css" />
+	</head>
+	<body>
+		<div id="map"></div>
+		<div id="coords"></div>
+		<div id="drone" onclick="wanderdrone_about();"></div>
+		<div id="about">
+			<p><strong>this is wanderdrone</strong></p>
+			<p>it's a thing by <a href="http://www.aaronland.info/weblog/2012/03/13/godhelpus/#wanderdrone" target="_aaronland">aaron straup cope</a></p>
+			<p class="attr">watercolor tiles by <a href="http://stamen.com">stamen design</a> under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a><br />data by <a href="http://openstreetmap.org">openstreetmap</a> under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a></p>
+			<p class="close">
+				this message will go away in 15 seconds<br />
+			  	or you can <a href="#" onclick="wanderdrone_about(0);return false;">make it go away, now</a>
+			</p>
+		</div>
+		<script type="text/javascript">
+
+			wanderdrone_init();
+
+			setTimeout(function(){
+				wanderdrone_about(0);
+			}, 15000);
+
+</script>
+		</script>
+
+	</body>
+</html>

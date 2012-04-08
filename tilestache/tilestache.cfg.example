@@ -1,0 +1,30 @@
+{
+
+    "cache": {
+        "path": "/var/tiles", 
+        "name": "Disk"
+    },
+
+    "layers": {
+
+        "watercolor": {
+            "provider": {
+                "url": "http://tile.stamen.com/watercolor/{Z}/{X}/{Y}.jpg", 
+                "name": "proxy"
+            },
+	    "preview": {
+		"ext": "jpg"
+	    }
+        },
+
+	"waterdithered": {
+		"provider": {
+			"class": "atkinstache.dithering.Provider",
+			"kwargs": {
+				"source_layer": "watercolor"
+			}
+		}
+	}
+
+    }
+}

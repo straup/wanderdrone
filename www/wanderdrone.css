@@ -1,0 +1,77 @@
+body { 
+    margin: 0;
+    padding:0;
+    font-family:sans-serif;
+}
+
+#map {
+    height: 100%;
+    width:100%;
+    }
+
+#drone {
+	background-image:url('drone-sm.png');
+	background-repeat:none;
+	position:absolute;
+	top: 45%;
+	left: 45%;
+	height:100px;
+	width:150px;
+	-moz-transition: all 2s ease;
+	-webkit-transition: all 2s ease;
+	-o-transition: all 2s ease;
+	-ms-transition: all 2s ease;
+	transition: all 2s ease;
+}
+
+#coords {
+	font-size:small;
+	font-weight: 700;
+	opacity:.8;
+	color:#000;
+	position:absolute;
+	top: 5%;
+	left: 5%;
+}
+
+#thisis {
+    margin-top:10px;
+    font-weight: 100;
+    text-decoration:none;
+    color:#000;
+    display:block;
+    background-color:#fff;
+    padding:5px;
+}
+
+#about {
+	z-index: 100;
+	position: absolute;
+	top: 5%;
+	right: 5%;
+	border:5px solid #000;
+	padding:30px;
+	padding-top:20px;
+	padding-bottom:20px;
+	background-color:#fff;
+	max-width:60%;
+	font-size: small;
+	opacity: .9;
+}
+
+#about .attr {
+    font-size:11px;
+}
+
+#about .close {
+    font-size:11px;
+    text-align:right;
+    margin-top:20px;
+}
+
+.instructions {
+    font-style: italic;
+    margin-top:10px;
+    font-size:11px;
+    text-align:right;
+}
