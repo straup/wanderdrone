@@ -1,0 +1,2 @@
+var wanderdrone_provider_base = 'http://example.com/base/{Z}/{X}/{Y}.png';
+var wanderdrone_provider_zoom = 'http://example.com/zoom/{Z}/{X}/{Y}.png';

@@ -22,6 +22,7 @@ body {
 	-o-transition: all 2s ease;
 	-ms-transition: all 2s ease;
 	transition: all 2s ease;
+	z-index: 500;
 }
 
 #coords {
@@ -74,4 +75,22 @@ body {
     margin-top:10px;
     font-size:11px;
     text-align:right;
+}
+
+#zoom {
+	z-index: 100;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding:30px;
+	padding-top:20px;
+	padding-bottom:20px;
+	background-color:#fff;
+	max-width:300px;
+	width:300px;
+	max-height:200px;
+	height:200px;
+	display:none;
+	opacity:.9;
+	border:3px solid #fff;
 }

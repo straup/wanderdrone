@@ -1,7 +1,6 @@
 function wanderdrone_init(debug){
 
-	var base_template = 'http://example.com/layer/{Z}/{X}/{Y}.png';
-	var base_layer = new MM.TemplatedLayer(base_template);
+	var base_layer = new MM.TemplatedLayer(wanderdrone_provider_base);
 
 	var map = new MM.Map('map', base_layer);
 
@@ -118,6 +117,12 @@ function wanderdrone_init(debug){
 	};
 
 	set_direction();
+
+	// zoom window
+
+	wanderdrone_init_zoom();
+	wanderdrone_position_zoom();
+	wanderdrone_toggle_zoom(1);
 }
 
 function wanderdrone_get_degrees(x, y){
@@ -258,4 +263,39 @@ function tilestache_static_provider(template){
 	});
 
 	return new MM.Layer(provider);
+}
+
+function wanderdrone_init_zoom(){
+
+	var zoom_layer = new MM.TemplatedLayer(wanderdrone_provider_zoom);
+	var zoom_map = new MM.Map('zoom', zoom_layer);
+
+	zoom_map.setZoomRange(12, 18);
+
+	/* get coords from map here */
+	var debug = 1;
+
+	if (debug){
+		lat = 37.75;
+		lon = -122.45;
+		zoom = 11;
+	}
+
+	var center = new MM.Location(lat, lon);
+	zoom_map.setCenterZoom(center, zoom);
+
+}
+
+function wanderdrone_position_zoom(){
+   	var w = window.innerWidth;
+	var h = window.innerHeight;
+	var z = document.getElementById("zoom");
+
+	z.style.top = (h - 160) / 2;
+	z.style.left = (w - 290) / 2;
+}
+
+function wanderdrone_toggle_zoom(display){
+	var z = document.getElementById("zoom");
+	z.style.display = (display) ? "block" : "none";
 }
