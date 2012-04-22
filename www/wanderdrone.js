@@ -1,8 +1,13 @@
+/* please to wrap me in a function closure thing-y */
+
+var map;
+var zoom_map;
+
 function wanderdrone_init(debug){
 
 	var base_layer = new MM.TemplatedLayer(wanderdrone_provider_base);
 
-	var map = new MM.Map('map', base_layer);
+	map = new MM.Map('map', base_layer);
 
 	map.setZoomRange(3, 14);
 
@@ -36,6 +41,7 @@ function wanderdrone_init(debug){
 		timeout_move = setTimeout(function(){
 
 			map.panBy(x, y);
+			zoom_map.panBy(x, y);
 
 			var center = map.getCenter();
 			var zoom = map.getZoom();
@@ -268,22 +274,14 @@ function tilestache_static_provider(template){
 function wanderdrone_init_zoom(){
 
 	var zoom_layer = new MM.TemplatedLayer(wanderdrone_provider_zoom);
-	var zoom_map = new MM.Map('zoom', zoom_layer);
+	zoom_map = new MM.Map('zoom', zoom_layer);
 
-	zoom_map.setZoomRange(12, 18);
+	zoom_map.setZoomRange(4, 18);
 
-	/* get coords from map here */
-	var debug = 1;
+	var center = map.getCenter();
+	var zoom = map.getZoom() + 2;
 
-	if (debug){
-		lat = 37.75;
-		lon = -122.45;
-		zoom = 11;
-	}
-
-	var center = new MM.Location(lat, lon);
 	zoom_map.setCenterZoom(center, zoom);
-
 }
 
 function wanderdrone_position_zoom(){
