@@ -41,7 +41,6 @@ function wanderdrone_init(debug){
 		timeout_move = setTimeout(function(){
 
 			map.panBy(x, y);
-			zoom_map.panBy(x, y);
 
 			var center = map.getCenter();
 			var zoom = map.getZoom();
@@ -68,6 +67,7 @@ function wanderdrone_init(debug){
 
 			coords.innerHTML = html;
 
+			wanderdrone_center_zoom();
 			move(x, y);	
 		}, 50);
 	};
@@ -277,6 +277,10 @@ function wanderdrone_init_zoom(){
 	zoom_map = new MM.Map('zoom', zoom_layer);
 
 	zoom_map.setZoomRange(4, 18);
+	wanderdrone_center_zoom();	 
+}
+
+function wanderdrone_center_zoom(){
 
 	var center = map.getCenter();
 	var zoom = map.getZoom() + 2;
